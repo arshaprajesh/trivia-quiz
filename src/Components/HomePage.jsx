@@ -46,7 +46,7 @@ const [quizData, setQuizData] = useState({userName: '', category: '', difficulty
 
    try {
      
-     const response = await fetch('https://opentdb.com/api.php?amount=1')
+     const response = await fetch(`https://opentdb.com/api.php?amount=1&category=${quizData.category}&difficulty=${quizData.difficulty}`)
      if (!response.ok) {
        throw new Error('Failed to create post');
      }
